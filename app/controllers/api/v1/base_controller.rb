@@ -9,7 +9,7 @@ class Api::V1::BaseController < ApplicationController
     }
   end
 
-  # method to render data
+  # method to render response data
   def render_data(data)
     render status: :ok, json: {
         data: data

@@ -20,17 +20,4 @@ class BulkImporter
 
   end
 
-  # 26.787049, 79.029181
-  # 26.787007, 79.030051
-
-
-
-  # 26.790086, 79.033926
-
-
-  # User.create({name: 'etw1', location: "POINT(#{79.033926} #{26.790086})"})
-  # User.create({name: 'etw2', location: "POINT(#{79.030051} #{26.787007})"})
-  # User.create({name: 'etw3', location: "POINT(#{79.029181} #{26.787049} )"})
-  # User.create({name: 'etw4', location: "POINT(#{79.085152} #{26.843041})"})
-
 end

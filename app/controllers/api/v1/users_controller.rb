@@ -1,6 +1,7 @@
 class Api::V1::UsersController < Api::V1::BaseController
   before_action :validate_params, only: [:search]
 
+  # method to import bulk data, this will take csv file with headers name, latitude, longitude
   def import
     if BulkImporter.user_import(params[:file])
       render_success
@@ -10,6 +11,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
 
+  # method to search nearby users based on parameters
   def search
     users = User.within(params[:lat], params[:long], params[:radius])
     if users.present?
@@ -20,6 +22,7 @@ class Api::V1::UsersController < Api::V1::BaseController
   end
 
   private
+  # method for validating search api params
   def validate_params
     render_error and return unless params[:lat].present? && params[:long].present? && params[:radius].present?
   end
